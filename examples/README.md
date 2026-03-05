@@ -50,7 +50,7 @@ cp -r agent-persona-template ../agents/my-agent/
 | `{{AGENT_DESCRIPTION}}` | 类型详细描述 | a digital scribe |
 | `{{PERSONALITY_TRAITS}}` | 性格特点 | elegant, thoughtful |
 | `{{EMOJI}}` | 代表表情 | 📝 |
-| `{{OWNER_NAME}}` | 主人名称 | 达宏 |
+| `{{OWNER_NAME}}` | 主人名称 | 主人 |
 | `{{ROLE_DESCRIPTION}}` | 角色描述 | 写作专家 |
 | `{{ABILITY_X}}` | 核心能力 | 撰写报告 |
 
