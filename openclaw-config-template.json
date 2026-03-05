@@ -1,0 +1,115 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.2.26",
+    "lastTouchedAt": "2026-03-06T00:00:00.000Z"
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "kimi-coding/k2p5"
+      },
+      "models": {
+        "kimi-coding/k2p5": {
+          "alias": "Kimi for Coding"
+        }
+      },
+      "workspace": "/Users/YOUR_USERNAME/.openclaw/workspace",
+      "compaction": {
+        "mode": "safeguard"
+      },
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8
+      }
+    },
+    "list": [
+      { "id": "main" },
+      { "id": "wenjiang", "workspace": "/Users/YOUR_USERNAME/.openclaw/workspace/agents/wenjiang" },
+      { "id": "geek", "workspace": "/Users/YOUR_USERNAME/.openclaw/workspace/agents/geek" },
+      { "id": "hunter", "workspace": "/Users/YOUR_USERNAME/.openclaw/workspace/agents/hunter" },
+      { "id": "socrates", "workspace": "/Users/YOUR_USERNAME/.openclaw/workspace/agents/socrates" },
+      { "id": "golden", "workspace": "/Users/YOUR_USERNAME/.openclaw/workspace/agents/golden" },
+      { "id": "creator", "workspace": "/Users/YOUR_USERNAME/.openclaw/workspace/agents/creator" }
+    ]
+  },
+  "bindings": [
+    { "agentId": "main", "match": { "channel": "discord", "accountId": "default" } },
+    { "agentId": "wenjiang", "match": { "channel": "discord", "accountId": "wenjiang" } },
+    { "agentId": "geek", "match": { "channel": "discord", "accountId": "geek" } },
+    { "agentId": "hunter", "match": { "channel": "discord", "accountId": "hunter" } },
+    { "agentId": "socrates", "match": { "channel": "discord", "accountId": "socrates" } },
+    { "agentId": "golden", "match": { "channel": "discord", "accountId": "golden" } },
+    { "agentId": "creator", "match": { "channel": "discord", "accountId": "creator" } }
+  ],
+  "tools": {
+    "agentToAgent": {
+      "enabled": true,
+      "allow": ["main", "wenjiang", "geek", "hunter", "socrates", "golden", "creator"]
+    },
+    "sessions": {
+      "visibility": "all"
+    }
+  },
+  "channels": {
+    "discord": {
+      "enabled": true,
+      "groupPolicy": "allowlist",
+      "streaming": "off",
+      "allowBots": true,
+      "accounts": {
+        "default": {
+          "token": "YOUR_NIKO_BOT_TOKEN",
+          "guilds": {
+            "YOUR_GUILD_ID": {
+              "requireMention": true,
+              "users": [
+                "YOUR_DISCORD_USER_ID",
+                "NIKO_BOT_USER_ID",
+                "WENJIANG_BOT_USER_ID",
+                "GEEK_BOT_USER_ID",
+                "HUNTER_BOT_USER_ID",
+                "SOCRATES_BOT_USER_ID",
+                "GOLDEN_BOT_USER_ID",
+                "CREATOR_BOT_USER_ID"
+              ],
+              "channels": {
+                "YOUR_CHANNEL_ID": { "allow": true }
+              }
+            }
+          }
+        },
+        "wenjiang": {
+          "token": "YOUR_WENJIANG_BOT_TOKEN",
+          "guilds": {
+            "YOUR_GUILD_ID": {
+              "requireMention": true,
+              "users": [
+                "YOUR_DISCORD_USER_ID",
+                "NIKO_BOT_USER_ID",
+                "WENJIANG_BOT_USER_ID"
+              ],
+              "channels": {
+                "YOUR_CHANNEL_ID": { "allow": true }
+              }
+            }
+          }
+        }
+      },
+      "threadBindings": {
+        "spawnSubagentSessions": true
+      }
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "loopback"
+  },
+  "plugins": {
+    "entries": {
+      "discord": {
+        "enabled": true
+      }
+    }
+  }
+}

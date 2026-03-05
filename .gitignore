@@ -1,0 +1,47 @@
+# 敏感配置文件
+*.env
+.env.local
+.env.production
+config.local.json
+openclaw.json.bak*
+
+# 包含真实Token的文件
+agents/*/agent/auth-profiles.json
+agents/*/agent/models.json
+
+# 个人工作空间（包含敏感数据）
+agents/
+sessions/
+memory/
+
+# IDE和系统文件
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# 日志文件
+*.log
+logs/
+
+# 临时文件
+tmp/
+temp/
+*.tmp
+
+# Node.js（如果有）
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python（如果有）
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/

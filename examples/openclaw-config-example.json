@@ -1,0 +1,166 @@
+{
+  "_comment": "OpenClaw 多Agent配置示例 - 请将所有 YOUR_XXX 替换为你的真实值",
+  "meta": {
+    "lastTouchedVersion": "2026.2.26",
+    "lastTouchedAt": "2026-03-06T00:00:00.000Z"
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "kimi-coding/k2p5"
+      },
+      "models": {
+        "kimi-coding/k2p5": {
+          "alias": "Kimi for Coding"
+        }
+      },
+      "workspace": "/Users/YOUR_USERNAME/.openclaw/workspace",
+      "compaction": {
+        "mode": "safeguard"
+      },
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8
+      }
+    },
+    "list": [
+      {
+        "id": "main"
+      },
+      {
+        "id": "wenjiang",
+        "workspace": "/Users/YOUR_USERNAME/.openclaw/workspace/agents/wenjiang"
+      },
+      {
+        "id": "geek",
+        "workspace": "/Users/YOUR_USERNAME/.openclaw/workspace/agents/geek"
+      }
+    ]
+  },
+  "bindings": [
+    {
+      "agentId": "main",
+      "match": {
+        "channel": "discord",
+        "accountId": "default"
+      }
+    },
+    {
+      "agentId": "wenjiang",
+      "match": {
+        "channel": "discord",
+        "accountId": "wenjiang"
+      }
+    },
+    {
+      "agentId": "geek",
+      "match": {
+        "channel": "discord",
+        "accountId": "geek"
+      }
+    }
+  ],
+  "tools": {
+    "_comment_agentToAgent": "启用Agent间通信，allow列表包含所有Agent ID",
+    "agentToAgent": {
+      "enabled": true,
+      "allow": [
+        "main",
+        "wenjiang",
+        "geek"
+      ]
+    },
+    "_comment_sessions": "visibility: all 是关键！让所有Agent看到频道完整上下文",
+    "sessions": {
+      "visibility": "all"
+    }
+  },
+  "channels": {
+    "discord": {
+      "enabled": true,
+      "groupPolicy": "allowlist",
+      "streaming": "off",
+      "_comment_allowBots": "必须开启，否则Agent间无法通信",
+      "allowBots": true,
+      "accounts": {
+        "default": {
+          "_comment": "Niko（总指挥）的Bot Token",
+          "token": "YOUR_NIKO_BOT_TOKEN",
+          "guilds": {
+            "YOUR_GUILD_ID": {
+              "_comment_requireMention": "必须在guilds层级，不是在channels！设为true防止Bot循环",
+              "requireMention": true,
+              "_comment_users": "白名单！必须包含：你 + 所有Bot的Discord User ID",
+              "users": [
+                "YOUR_DISCORD_USER_ID",
+                "NIKO_BOT_USER_ID",
+                "WENJIANG_BOT_USER_ID",
+                "GEEK_BOT_USER_ID"
+              ],
+              "channels": {
+                "YOUR_CHANNEL_ID": {
+                  "allow": true
+                }
+              }
+            }
+          }
+        },
+        "wenjiang": {
+          "_comment": "文匠的Bot Token",
+          "token": "YOUR_WENJIANG_BOT_TOKEN",
+          "guilds": {
+            "YOUR_GUILD_ID": {
+              "requireMention": true,
+              "users": [
+                "YOUR_DISCORD_USER_ID",
+                "NIKO_BOT_USER_ID",
+                "WENJIANG_BOT_USER_ID",
+                "GEEK_BOT_USER_ID"
+              ],
+              "channels": {
+                "YOUR_CHANNEL_ID": {
+                  "allow": true
+                }
+              }
+            }
+          }
+        },
+        "geek": {
+          "_comment": "极客的Bot Token",
+          "token": "YOUR_GEEK_BOT_TOKEN",
+          "guilds": {
+            "YOUR_GUILD_ID": {
+              "requireMention": true,
+              "users": [
+                "YOUR_DISCORD_USER_ID",
+                "NIKO_BOT_USER_ID",
+                "WENJIANG_BOT_USER_ID",
+                "GEEK_BOT_USER_ID"
+              ],
+              "channels": {
+                "YOUR_CHANNEL_ID": {
+                  "allow": true
+                }
+              }
+            }
+          }
+        }
+      },
+      "threadBindings": {
+        "spawnSubagentSessions": true
+      }
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "loopback"
+  },
+  "plugins": {
+    "entries": {
+      "discord": {
+        "enabled": true
+      }
+    }
+  }
+}
