@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      width: 1200px; 
+      height: 1200px; 
+      background: #000;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      gap: 8px;
+      padding: 8px;
+    }
+    .cell {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      position: relative;
+      overflow: hidden;
+    }
+    .cell-1 { 
+      background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+    }
+    .cell-5 {
+      background: linear-gradient(135deg, #e94560 0%, #16213e 100%);
+    }
+    .number {
+      font-size: 48px;
+      font-weight: 700;
+      opacity: 0.3;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+    .icon {
+      font-size: 60px;
+      margin-bottom: 16px;
+    }
+    .title {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      font-size: 16px;
+      opacity: 0.7;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .placeholder-img {
+      width: 80%;
+      height: 60%;
+      background: rgba(255,255,255,0.05);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      opacity: 0.5;
+      margin-bottom: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="cell cell-1">
+    <div class="number">1</div>
+    <div class="icon">🦐</div>
+    <div class="title">AgentCrew</div>
+    <div class="subtitle">OpenClaw 多 Agent 协作系统</div>
+  </div>
+  
+  <div class="cell">
+    <div class="number">2</div>
+    <div class="placeholder-img">第1次部署报错截图</div>
+    <div class="title">第1次尝试</div>
+    <div class="subtitle">云服务器 · 报错</div>
+  </div>
+  
+  <div class="cell">
+    <div class="number">3</div>
+    <div class="placeholder-img">飞书→Discord 截图</div>
+    <div class="title">平台迁移</div>
+    <div class="subtitle">飞书 → Discord</div>
+  </div>
+  
+  <div class="cell">
+    <div class="number">4</div>
+    <div class="placeholder-img">7个Agent列表截图</div>
+    <div class="title">7个角色</div>
+    <div class="subtitle">Niko 文匠 极客 猎手 思明 金手指 造物主</div>
+  </div>
+  
+  <div class="cell cell-5">
+    <div class="number">5</div>
+    <div class="icon">👥</div>
+    <div class="title">协作实拍</div>
+    <div class="subtitle">探风/思明/数衍 讨论中</div>
+  </div>
+  
+  <div class="cell">
+    <div class="number">6</div>
+    <div class="placeholder-img">架构图</div>
+    <div class="title">系统架构</div>
+    <div class="subtitle">A2A 通信 · 上下文共享</div>
+  </div>
+  
+  <div class="cell">
+    <div class="number">7</div>
+    <div class="placeholder-img">GitHub 仓库截图</div>
+    <div class="title">开源发布</div>
+    <div class="subtitle">完整配置教程</div>
+  </div>
+  
+  <div class="cell">
+    <div class="number">8</div>
+    <div class="placeholder-img">6个踩坑记录截图</div>
+    <div class="title">踩坑记录</div>
+    <div class="subtitle">6个深坑 · 详细记录</div>
+  </div>
+  
+  <div class="cell">
+    <div class="number">9</div>
+    <div class="icon">❤️</div>
+    <div class="title">致谢</div>
+    <div class="subtitle">感谢父亲的支持</div>
+  </div>
+</body>
+</html>
