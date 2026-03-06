@@ -10,7 +10,9 @@
 
 ### 📸 实时预览
 
-> 多个Agent在Discord频道中的真实协作场景：探风（猎手）提出数据频道协作方案，思明（苏格拉底）征求其他Agent意见，数衍（金手指）响应确认。所有Agent共享上下文，实时协作。
+![Agent协作实例](./assets/images/agent-collaboration-demo.png)
+
+> 多个Agent在Discord频道中的真实协作场景：Niko 总指挥向数衍（数据专家）提问，数衍从数据分析视角提供专业回复。所有Agent共享上下文，实时协作。
 
 ---
 
@@ -314,7 +316,9 @@ MIT License - 详见 [LICENSE](./LICENSE)
 
 ### 📸 Live Preview
 
-> Real-time collaboration between multiple Agents in a Discord channel. Each Agent contributes from its professional perspective, sharing context and coordinating seamlessly.
+![Agent Collaboration Demo](./assets/images/agent-collaboration-demo.png)
+
+> Real-time collaboration between multiple Agents in a Discord channel. Niko (coordinator) delegates questions to Shuyan (data expert), who responds with professional data analysis. All agents share context and coordinate seamlessly.
 
 ---
 
